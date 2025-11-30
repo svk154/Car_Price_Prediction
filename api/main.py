@@ -2,12 +2,13 @@ from flask import Flask,render_template,request
 import pandas as pd
 import numpy as np
 from joblib import load
+from sklearn.preprocessing import OneHotEncoder
 
 
 app = Flask(__name__)
 
 # load our data
-car_data = pd.read_excel("Clean_car.xlsx")
+car_data = pd.read_excel("Cleaned_car_data.xlsx")
 MLmodel = load("RandomforestReg.pkl")
 
 # routing the website
